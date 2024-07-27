@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/widgets/custom_icon_button.dart';
 import 'package:flutter/material.dart';
 
@@ -15,13 +16,13 @@ class CustomWeightAge extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          color: const Color(0xff9E9E9E),
+          color: kColor,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(title, style: const TextStyle(fontSize: 45, fontWeight: FontWeight.bold),),
-            Text(title == 'age' ? value.toString() : value.toString(), style: const TextStyle(fontSize: 45, fontWeight: FontWeight.bold),),
+            Text(title, style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold,color: Colors.white),),
+            Text(value.toString(), style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold,color: Colors.white),),
             Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children:  [

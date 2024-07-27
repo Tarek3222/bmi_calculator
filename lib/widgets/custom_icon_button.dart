@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomIconButton extends StatelessWidget {
@@ -10,8 +11,8 @@ class CustomIconButton extends StatelessWidget {
     return IconButton(
       onPressed: onPressed, 
       style: IconButton.styleFrom(
-        backgroundColor: Colors.blueGrey[600],
-        foregroundColor: Colors.black,
+        backgroundColor: kSecondColor,
+        foregroundColor: Colors.white,
       ),
       icon: Icon(icon));
   }

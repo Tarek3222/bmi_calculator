@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/pages/result_page.dart';
 import 'package:bmi_calculator/widgets/weight_age_widget.dart';
 import 'package:flutter/material.dart';
@@ -17,15 +18,16 @@ class _BmiPageState extends State<BmiPage> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: const Color(0xffB4B3B4),
+      backgroundColor:Colors.red[100] ,
       appBar: AppBar(
         title: const Text('Body Mass Index',
         style: TextStyle(
-          fontSize: 38,
+          fontSize: 34,
           fontWeight: FontWeight.bold,
+          color: Colors.white,
         ),
         ),
-        backgroundColor:const Color(0xff536C7C) ,
+        backgroundColor:kColor ,
         centerTitle: true,
       ),
       body: Padding(
@@ -52,25 +54,25 @@ class _BmiPageState extends State<BmiPage> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 7,
             ),
             Expanded(
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.grey,
+                  color: kColor,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child:Column(
                   children: [
-                   const Text('HEIGHT', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),),
+                   const Text('HEIGHT', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold,color: Colors.white),),
                      Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.baseline,
                       textBaseline: TextBaseline.alphabetic,
                       children: [
-                       Text('${height.round()}', style:const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),),
+                       Text('${height.round()}', style:const TextStyle(fontSize: 40, fontWeight: FontWeight.bold,color: Colors.white),),
                        const SizedBox(width: 5,),
-                      const Text('cm', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                      const Text('cm', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.white),),
                     ],),
                     Slider(
                       value: height,
@@ -81,16 +83,16 @@ class _BmiPageState extends State<BmiPage> {
                           height = value;
                         });
                       },
-                      activeColor: Colors.blueGrey[800],
-                      inactiveColor: Colors.blueGrey[400],
-                      thumbColor: Colors.black,
+                      activeColor: Colors.white.withOpacity(0.9),
+                      inactiveColor: Colors.white.withOpacity(0.2),
+                      thumbColor: Colors.white,
                     ),
                   ],
                 ) ,
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 7,
             ),
              Expanded(
               child:  Row(children: [
@@ -131,7 +133,7 @@ class _BmiPageState extends State<BmiPage> {
               ],),
             ),
             const SizedBox(
-              height: 10,
+              height: 7,
             ),
             ElevatedButton(onPressed: (){
               double result=weightValue/ ((height/100)*(height/100));
@@ -144,14 +146,14 @@ class _BmiPageState extends State<BmiPage> {
               }));
             },
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blueGrey[600],
+              backgroundColor: kSecondColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
               ),
-              minimumSize: const Size(double.infinity, 50),
+              minimumSize: const Size(double.infinity, 45),
             ),
              child: const Text('CALCULATE',
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold,color: Colors.black),),),
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold,color: Colors.white),),),
           ],
         ),
       ),
@@ -159,7 +161,6 @@ class _BmiPageState extends State<BmiPage> {
   }
 
   Widget customContainer(BuildContext context,{required IconData icon, required String gender}) {
-    final Color defaultColor = Colors.blueGrey[600]!;
     return Expanded(
       child: GestureDetector(
         onTap: () {
@@ -172,20 +173,21 @@ class _BmiPageState extends State<BmiPage> {
             borderRadius: BorderRadius.circular(16),
             color: (isMale && gender == 'Male') ||
                     (!isMale && gender == 'Female')
-                ? defaultColor
-                : Colors.grey,
+                ? kSecondColor
+                : kColor,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(
                 icon,
-                size: 90,
+                size: 80,
+                color: Colors.white,
               ),
               Text(
                 gender,
                 style:
-                    const TextStyle(fontSize: 45, fontWeight: FontWeight.bold),
+                    const TextStyle(fontSize: 35, fontWeight: FontWeight.bold,color: Colors.white),
               ),
             ],
           ),
