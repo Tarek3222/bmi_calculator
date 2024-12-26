@@ -3,7 +3,7 @@
 This is a simple Body Mass Index (BMI) calculator app developed using Flutter. The app allows users to input their gender, height, weight, and age to calculate their BMI, and provides a result based on the calculated BMI value.
 
 <p align="center">
-  <img src="Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20-%202023-05-04%20at%2014.51.06.png" width="200" alt="App Screenshot 1" hspace="10">
+  <img src="https://raw.githubusercontent.com/Tarek3222/bmi_calculator/refs/heads/main/app%20images/home_page.png" width="200" alt="App Screenshot 1" hspace="10">
   <img src="Simulator%20Screen%20Shot%20-%20iPhone%2014%20Pro%20-%202023-05-04%20at%2014.51.11.png" width="200" alt="App Screenshot 2" hspace="10">
 </p>
 
