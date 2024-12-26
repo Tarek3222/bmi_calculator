@@ -14,23 +14,25 @@ class CustomBackgroundGenderContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 300),
       width: double.infinity,
       margin: margin,
       padding: const EdgeInsets.all(12.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
         color: isSelected ? Colors.white : Colors.black54,
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
-            blurRadius: 30,
-            offset: Offset(-10, -10),
+            blurRadius: isSelected ? 5 : 30,
+            offset:
+                isSelected ? const Offset(-10, -10) : const Offset(-15, -15),
             color: Colors.white,
           ),
           BoxShadow(
-            blurRadius: 30,
-            offset: Offset(10, 10),
-            color: Color(0xFFA7A9AF),
+            blurRadius: isSelected ? 5 : 30,
+            offset: isSelected ? const Offset(10, 10) : const Offset(15, 15),
+            color: const Color(0xFFA7A9AF),
           ),
         ],
       ),
